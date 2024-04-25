@@ -28,6 +28,25 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    # Agrega más orígenes si es necesario
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'access-control-allow-origin' 
+]
+CORS_ORIGIN_WHITELIST =(
+    'http://localhost:4200'
+)
 
 
 # Application definition
@@ -41,7 +60,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'corsheaders',
-    'usuarios'
+    'usuarios',
+    'visitas',
+    'catalogos'
 ]
 
 MIDDLEWARE = [
@@ -52,7 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # Agregar esta línea
+    'corsheaders.middleware.CorsMiddleware',  # Cors
 ]
 
 ROOT_URLCONF = 'backbiblioteca.urls'

@@ -9,28 +9,10 @@ import datetime
 import json
 from rest_framework.parsers import JSONParser
 
-# def saludar(request):
-#     return HttpResponse("Hola")
-
 def saludar(request):
 	now = datetime.datetime.now()
 	html = "<html><body>It is now %s.</body></html>" % now
 	return HttpResponse(html)
-
-# @api_view(['GET'])
-# def buscar_usuario(request, cedula):
-#     try:
-#         usuario = Usuario.objects.get(cedula=cedula)
-#         data = {
-#             'id': usuario.id,
-#             'cedula': usuario.cedula,
-#             'nombre': usuario.nombre,
-#             'apellido': usuario.apellido,
-#             # Agrega más campos según sea necesario
-#         }
-#         return JsonResponse(data)
-#     except Usuario.DoesNotExist:
-#         return JsonResponse({'error': 'Usuario no encontrado'}, status=404)
 
 @api_view(['POST'])
 def buscar_usuario(request):

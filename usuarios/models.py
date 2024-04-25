@@ -25,9 +25,4 @@ class Usuario(models.Model):
         verbose_name_plural = 'usuario'
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido}"
-
-# class UsuarioSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Usuario
-#         fields = '__all__'        
+        return f"{self.nombre} {self.apellido}"       
