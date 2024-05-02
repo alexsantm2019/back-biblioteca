@@ -14,3 +14,5 @@ class Catalogo(models.Model):
         verbose_name = 'catalogo'
         verbose_name_plural = 'catalogo'
    
+    def __str__(self):
+        return f"{self.catalogo}"
