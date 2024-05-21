@@ -32,10 +32,15 @@ def buscar_usuario(request):
 
 
 @api_view(['GET'])
+# def get_usuarios(request):
+#     usuarios = Usuario.objects.all()
+#     serializer = UsuarioSerializer(usuarios, many=True)
+#     return JsonResponse(serializer.data, safe=False)    
+
 def get_usuarios(request):
-    usuarios = Usuario.objects.all()
+    usuarios = Usuario.objects.order_by('nombre')
     serializer = UsuarioSerializer(usuarios, many=True)
-    return JsonResponse(serializer.data, safe=False)    
+    return JsonResponse(serializer.data, safe=False)  
 
 
 @api_view(['POST'])
@@ -46,7 +51,6 @@ def crear_usuario(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
-
 
 @api_view(['PUT'])
 def editar_usuario(request, usuario_id):

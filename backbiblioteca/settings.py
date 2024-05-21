@@ -108,7 +108,7 @@ DATABASES = {
     #  -------------- Conexión de base de datos en Postgres -------------
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'biblioteca_galapagos',
+        'NAME': 'biblioteca_galapagos_test',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
